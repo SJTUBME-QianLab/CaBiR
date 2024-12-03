@@ -1,0 +1,104 @@
+{
+  "save_dir": "/home/data2/tangxl/Proj1/Results/NACC_AIBL/DN0.3_image_3/20240724_Causal",
+  "task": "clf_NC0.MCI1.AD2",
+  "split_mode": "patient",
+  "split": 2020,
+  "fold": 0,
+  "seed": 42,
+  "phase": "train",
+  "feeder": "tools.feedersOH.Feeder",
+  "data": {
+    "env": ["MRIFIELDj", "MRIMANUj", "MRIMODLj", "MRITHICKj", "NACCADC"],
+    "csv_dir": "/home/data2/tangxl/Proj1/20231223_Data/dataset/NACC/DN0.3_image_3",
+    "pkl_path": "/home/data2/tangxl/Proj1/20231223_Data/dataset/NACC/(1e-02;75;MinMax;clip).npy_ave_3.pkl"
+  },
+  "test_data": {
+    "csv_dir": "/home/data2/tangxl/Proj1/20231223_Data/dataset/AIBL/DN0.3_image_3",
+    "pkl_path": "/home/data2/tangxl/Proj1/20231223_Data/dataset/AIBL/(1e-02;75;MinMax;clip).npy_ave_3.pkl"
+  },
+  "impute": "mean",
+  "normalize": "std",
+  "print_log": "True",
+  "save_interval": 1,
+  "num_workers": 4,
+  "batch_size": 16,
+  "num_epochs": 50,
+  "early_stop": 10,
+  "algorithm": {
+    "name": "algorithmsMul.Algorithm1",
+    "sch_split": "False",
+    "model1": {
+      "lr_c": 1,
+      "bias": {
+        "name": "FullyConnectRBD",
+        "dropout": 0,
+        "BN": "False"
+      },
+      "enc": {
+        "name": "CNNTriangle",
+        "width": 64,
+        "depth": 2,
+        "dropout": 0,
+        "BN": "True",
+        "kernel": [[7, 3, 0], [4, 2, 0]]
+      }
+    },
+    "model2": {
+      "lr_c": 1,
+      "bias": {
+        "name": "FullyConnectRBD",
+        "dropout": 0,
+        "BN": "False"
+      },
+      "dim": 128,
+      "enc": {
+        "name": "MLPsRBD",
+        "dropout": 0,
+        "BN": "False",
+        "hidden": [128]
+      }
+    },
+    "model3": {
+      "lr_c": 1,
+      "bias": {
+        "name": "FullyConnectRBD",
+        "dropout": 0,
+        "BN": "False"
+      },
+      "dim": 128,
+      "enc": {
+        "name": "FullyConnectRBD",
+        "dropout": 0,
+        "BN": "False"
+      },
+      "env": {
+        "name": "MLPsRBD",
+        "hidden": [128],
+        "dropout": 0,
+        "BN": "False"
+      }
+    },
+    "fuse": "None",
+
+    "loss": {
+      "GCE_q": 0.7,
+      "ampl_type": "comb",
+      "cf_coeff": 40,
+      "weight_type": "zero"
+      },
+    "ampl": {
+      "kind": "VarDiv",
+      "pre_epoch": 10
+    },
+
+    "optimizer": {
+      "name": "Adam",
+      "lr": 0.0001,
+      "weight_decay": 0
+    },
+    "scheduler": {
+      "name": "ReduceLROnPlateau",
+      "factor": 0.1
+    }
+  }
+}

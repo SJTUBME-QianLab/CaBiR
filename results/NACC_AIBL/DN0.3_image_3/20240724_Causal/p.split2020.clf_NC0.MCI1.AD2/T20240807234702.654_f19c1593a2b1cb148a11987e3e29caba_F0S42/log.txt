@@ -1,0 +1,442 @@
+[2024-08-07 23:47:02] String of hyper-parameters:
+{"algorithm": {"ampl": {"kind": "VarDiv", "pre_epoch": 10}, "fuse": null, "info": {"coeff": 0, "dynamic": "ori", "eps": 0}, "loss": {"GCE_q": 0.7, "ampl_type": "comb", "cf_coeff": 40, "dist_coeff": 0, "dist_type": "zero", "weight_type": "zero"}, "model1": {"bias": {"BN": false, "dropout": 0, "name": "FullyConnectRBD"}, "enc": {"BN": true, "depth": 2, "dropout": 0, "kernel": [[7, 3, 0], [4, 2, 0]], "name": "CNNTriangle", "width": 64}, "lr_c": 1}, "model2": {"bias": {"BN": false, "dropout": 0, "name": "FullyConnectRBD"}, "dim": 128, "enc": {"BN": false, "dropout": 0, "hidden": [128], "name": "MLPsRBD"}, "lr_c": 1}, "model3": {"bias": {"BN": false, "dropout": 0, "name": "FullyConnectRBD"}, "dim": 128, "enc": {"BN": false, "dropout": 0, "name": "FullyConnectRBD"}, "env": {"BN": false, "dropout": 0, "hidden": [128], "name": "MLPsRBD"}, "lr_c": 1}, "name": "algorithmsMul224.Algorithm1", "optimizer": {"lr": 0.0001, "name": "Adam", "weight_decay": 0}, "sch_split": false, "scheduler": {"cooldown": 0, "factor": 0.1, "min_lr": 0, "mode": "min", "name": "ReduceLROnPlateau", "patience": 10, "threshold": 0.0001}}, "batch_size": 16, "data": {"csv_dir": "../20231223_Data/dataset/NACC/DN0.3_image_3", "env": ["MRIFIELDj", "MRIMANUj", "MRIMODLj", "MRITHICKj", "NACCADC"], "pkl_path": "../20231223_Data/dataset/NACC/(1e-02;75;MinMax;clip).npy_ave_3.pkl"}, "early_stop": 10, "feeder": "tools.feedersOH.Feeder", "impute": "mean", "normalize": "std", "num_epochs": 50, "num_workers": 4, "print_log": true, "save_interval": 1, "task": "clf_NC0.MCI1.AD2"}
+[2024-08-07 23:47:02] train----------Work dir: ../Results/NACC_AIBL/DN0.3_image_3/20240724_Causal/p.split2020.clf_NC0.MCI1.AD2/T20240807234702.654_f19c1593a2b1cb148a11987e3e29caba_F0S42
+[2024-08-07 23:47:02] Load data.
+[2024-08-07 23:47:02] Labels: NC(0):4119, AD(2):1359, MCI(1):1042
+[2024-08-07 23:47:02] Labels_test: NC(0):912, MCI(1):168, AD(2):140
+[2024-08-07 23:47:02] Train data: [Demo] ['SEX', 'NACCAGE', 'NACCAPOE', 'NACCNE4S'], [Info] ['NACCADC', 'MRIFIELDj', 'MRIMANUj', 'MRIMODLj', 'MRITHICKj', 'Label', 'NACCID']
+[2024-08-07 23:47:02] Test data: [Demo] ['SEX', 'NACCAGE', 'NACCAPOE', 'NACCNE4S'], [Info] ['NACCADC', 'MRIFIELDj', 'MRIMANUj', 'MRIMODLj', 'MRITHICKj', 'Label', 'NACCID']
+[2024-08-07 23:47:02] [MRIFIELDj] 3, [MRIMANUj] 4, [MRIMODLj] 23, [MRITHICKj] 14, [NACCADC] 25
+[2024-08-07 23:47:28] Sample number:	[train] 3925, [val] 1289, [test] 1306, [indi] 1220
+[2024-08-07 23:47:28] Initialize algorithm.
+[2024-08-07 23:47:28] n_inputs: [Demo] 4, [Info] 7, [Env] 52, [MRI] [60, 72, 60]
+[2024-08-07 23:47:31] Algorithm1(
+  (all_networks): ModuleDict(
+    (MRI): OneModalityCausal(
+      (CE): CrossEntropyLoss()
+      (encoder): CNNTriangle(
+        (networks): ModuleDict(
+          (layer0): ConvLayerCBRD(
+            (conv): Conv3d(1, 64, kernel_size=(7, 7, 7), stride=(3, 3, 3), bias=False)
+            (BN): BatchNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (dropout): Dropout(p=0, inplace=False)
+            (relu): LeakyReLU(negative_slope=0.01)
+          )
+          (layer1): ConvLayerCBRD(
+            (conv): Conv3d(64, 128, kernel_size=(4, 4, 4), stride=(2, 2, 2), bias=False)
+            (BN): BatchNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (dropout): Dropout(p=0, inplace=False)
+            (relu): LeakyReLU(negative_slope=0.01)
+          )
+        )
+      )
+      (encoder_bias): FullyConnectRBD(
+        (networks): LayerRBD(
+          (layer): Linear(in_features=128, out_features=128, bias=True)
+          (dropout): Dropout(p=0, inplace=False)
+          (relu): LeakyReLU(negative_slope=0.01)
+        )
+      )
+      (fc_causal): Linear(in_features=128, out_features=3, bias=True)
+      (fc_bias): Linear(in_features=128, out_features=3, bias=True)
+      (GCE): GeneralizedCELoss()
+      (lambda_ampl): Amplification()
+      (coding_rate): CodingRateDynamic()
+    )
+    (NonMRI): OneModalityCausal(
+      (CE): CrossEntropyLoss()
+      (encoder): MLPsRBD(
+        (networks): ModuleDict(
+          (layer0): LayerRBD(
+            (layer): Linear(in_features=4, out_features=128, bias=True)
+            (dropout): Dropout(p=0, inplace=False)
+            (relu): LeakyReLU(negative_slope=0.01)
+          )
+        )
+        (output): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (encoder_bias): FullyConnectRBD(
+        (networks): LayerRBD(
+          (layer): Linear(in_features=128, out_features=128, bias=True)
+          (dropout): Dropout(p=0, inplace=False)
+          (relu): LeakyReLU(negative_slope=0.01)
+        )
+      )
+      (fc_causal): Linear(in_features=128, out_features=3, bias=True)
+      (fc_bias): Linear(in_features=128, out_features=3, bias=True)
+      (GCE): GeneralizedCELoss()
+      (lambda_ampl): Amplification()
+      (coding_rate): CodingRateDynamic()
+    )
+    (Fuse): FuseCausal(
+      (CE): CrossEntropyLoss()
+      (encoder): FullyConnectRBD(
+        (networks): LayerRBD(
+          (layer): Linear(in_features=256, out_features=128, bias=True)
+          (dropout): Dropout(p=0, inplace=False)
+          (relu): LeakyReLU(negative_slope=0.01)
+        )
+      )
+      (encoder_bias): FullyConnectRBD(
+        (networks): LayerRBD(
+          (layer): Linear(in_features=128, out_features=128, bias=True)
+          (dropout): Dropout(p=0, inplace=False)
+          (relu): LeakyReLU(negative_slope=0.01)
+        )
+      )
+      (fc_causal): Linear(in_features=128, out_features=3, bias=True)
+      (fc_bias): Linear(in_features=128, out_features=3, bias=True)
+      (fc_final): Linear(in_features=128, out_features=3, bias=True)
+      (GCE): GeneralizedCELoss()
+      (dist): MiniDistance()
+      (encoder_env): MLPsRBD(
+        (networks): ModuleDict(
+          (layer0): LayerRBD(
+            (layer): Linear(in_features=52, out_features=128, bias=True)
+            (dropout): Dropout(p=0, inplace=False)
+            (relu): LeakyReLU(negative_slope=0.01)
+          )
+        )
+        (output): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (fc_counterfactual): Linear(in_features=128, out_features=3, bias=True)
+      (lambda_ampl): Amplification()
+      (coding_rate): CodingRateDynamic()
+    )
+  )
+  (base_loss): CrossEntropyLoss()
+)
+[2024-08-07 23:47:31] groups_nonMRI: [Demo] 4
+[2024-08-07 23:47:31] Save epoch0_start_model.pth
+[2024-08-07 23:47:31] Train, epoch=0 ----------
+[2024-08-07 23:47:53] [data] 0.668ms, [model] 18158.842ms, [evaluate] 1.438ms, [calculate_loss] 59.271ms, [update] 92.116ms
+[2024-08-07 23:47:53] total_loss=1.5139104470914724
+[2024-08-07 23:47:53] Valid-val, epoch=0 ----------
+[2024-08-07 23:47:56] Save epoch0_best_model.pth
+[2024-08-07 23:47:56] loss=1.4451674371842176, acc=0.65244375484872 (best=0.65244375484872)
+[2024-08-07 23:47:56] Train, epoch=1 ----------
+[2024-08-07 23:48:18] [data] 0.641ms, [model] 18122.710ms, [evaluate] 1.597ms, [calculate_loss] 59.390ms, [update] 92.158ms
+[2024-08-07 23:48:18] total_loss=1.3184750848886917
+[2024-08-07 23:48:18] Valid-val, epoch=1 ----------
+[2024-08-07 23:48:22] Save epoch1_best_model.pth
+[2024-08-07 23:48:22] loss=1.342425385771841, acc=0.6935608999224204 (best=0.6935608999224204)
+[2024-08-07 23:48:22] Train, epoch=2 ----------
+[2024-08-07 23:48:43] [data] 0.613ms, [model] 18119.812ms, [evaluate] 1.488ms, [calculate_loss] 30.848ms, [update] 63.211ms
+[2024-08-07 23:48:43] total_loss=1.2838809093650507
+[2024-08-07 23:48:43] Valid-val, epoch=2 ----------
+[2024-08-07 23:48:47] loss=1.4029471909380218, acc=0.660977501939488 (best=0.6935608999224204)
+[2024-08-07 23:48:47] Train, epoch=3 ----------
+[2024-08-07 23:49:09] [data] 0.829ms, [model] 18498.032ms, [evaluate] 1.530ms, [calculate_loss] 58.950ms, [update] 112.361ms
+[2024-08-07 23:49:09] total_loss=1.2528052497883233
+[2024-08-07 23:49:09] Valid-val, epoch=3 ----------
+[2024-08-07 23:49:13] Save epoch3_best_model.pth
+[2024-08-07 23:49:13] loss=1.1729464850007703, acc=0.7121799844840963 (best=0.7121799844840963)
+[2024-08-07 23:49:13] Train, epoch=4 ----------
+[2024-08-07 23:49:36] [data] 1.053ms, [model] 18872.554ms, [evaluate] 1.670ms, [calculate_loss] 57.392ms, [update] 96.020ms
+[2024-08-07 23:49:36] total_loss=1.2147886962306742
+[2024-08-07 23:49:36] Valid-val, epoch=4 ----------
+[2024-08-07 23:49:40] loss=1.7639277649073752, acc=0.48176881303335917 (best=0.7121799844840963)
+[2024-08-07 23:49:40] Train, epoch=5 ----------
+[2024-08-07 23:50:06] [data] 1.044ms, [model] 21116.902ms, [evaluate] 2.031ms, [calculate_loss] 50.513ms, [update] 86.036ms
+[2024-08-07 23:50:06] total_loss=1.1927424693594173
+[2024-08-07 23:50:06] Valid-val, epoch=5 ----------
+[2024-08-07 23:50:11] loss=2.8037315702327374, acc=0.24049650892164467 (best=0.7121799844840963)
+[2024-08-07 23:50:11] Train, epoch=6 ----------
+[2024-08-07 23:50:35] [data] 1.067ms, [model] 20001.004ms, [evaluate] 1.936ms, [calculate_loss] 29.635ms, [update] 73.596ms
+[2024-08-07 23:50:35] total_loss=1.1653603519712175
+[2024-08-07 23:50:35] Valid-val, epoch=6 ----------
+[2024-08-07 23:50:40] loss=1.2356824135946802, acc=0.7114041892940264 (best=0.7121799844840963)
+[2024-08-07 23:50:40] Train, epoch=7 ----------
+[2024-08-07 23:51:02] [data] 1.044ms, [model] 18812.593ms, [evaluate] 1.645ms, [calculate_loss] 61.916ms, [update] 99.195ms
+[2024-08-07 23:51:02] total_loss=1.1277307271957397
+[2024-08-07 23:51:02] Valid-val, epoch=7 ----------
+[2024-08-07 23:51:06] Save epoch7_best_model.pth
+[2024-08-07 23:51:06] loss=1.1594591877828557, acc=0.7152831652443755 (best=0.7152831652443755)
+[2024-08-07 23:51:06] Train, epoch=8 ----------
+[2024-08-07 23:51:29] [data] 1.054ms, [model] 19064.075ms, [evaluate] 1.760ms, [calculate_loss] 39.666ms, [update] 76.334ms
+[2024-08-07 23:51:29] total_loss=1.119168458544478
+[2024-08-07 23:51:29] Valid-val, epoch=8 ----------
+[2024-08-07 23:51:33] Save epoch8_best_model.pth
+[2024-08-07 23:51:33] loss=1.1170032401710077, acc=0.7222653219550039 (best=0.7222653219550039)
+[2024-08-07 23:51:33] Train, epoch=9 ----------
+[2024-08-07 23:51:55] [data] 1.058ms, [model] 18712.123ms, [evaluate] 1.633ms, [calculate_loss] 29.232ms, [update] 65.514ms
+[2024-08-07 23:51:55] total_loss=1.1024679884618642
+[2024-08-07 23:51:55] Valid-val, epoch=9 ----------
+[2024-08-07 23:52:00] loss=2.706572217382693, acc=0.2924747866563227 (best=0.7222653219550039)
+[2024-08-07 23:52:00] Train, epoch=10 ----------
+[2024-08-07 23:52:25] [data] 1.071ms, [model] 21428.540ms, [evaluate] 1.148ms, [calculate_loss] 31.532ms, [update] 72.961ms
+[2024-08-07 23:52:25] total_loss=2.4710323508904906
+[2024-08-07 23:52:25] Valid-val, epoch=10 ----------
+[2024-08-07 23:52:29] loss=2.7261477082713435, acc=0.7121799844840963 (best=0.7222653219550039)
+[2024-08-07 23:52:29] Train, epoch=11 ----------
+[2024-08-07 23:52:54] [data] 1.120ms, [model] 22164.253ms, [evaluate] 1.380ms, [calculate_loss] 61.850ms, [update] 106.999ms
+[2024-08-07 23:52:54] total_loss=2.4567771702396626
+[2024-08-07 23:52:54] Valid-val, epoch=11 ----------
+[2024-08-07 23:52:58] loss=2.4922266690836476, acc=0.7168347556245152 (best=0.7222653219550039)
+[2024-08-07 23:52:58] Train, epoch=12 ----------
+[2024-08-07 23:53:22] [data] 1.049ms, [model] 20137.586ms, [evaluate] 1.134ms, [calculate_loss] 42.315ms, [update] 84.462ms
+[2024-08-07 23:53:22] total_loss=2.4122979850185162
+[2024-08-07 23:53:22] Valid-val, epoch=12 ----------
+[2024-08-07 23:53:26] loss=2.489514594858612, acc=0.7114041892940264 (best=0.7222653219550039)
+[2024-08-07 23:53:26] Train, epoch=13 ----------
+[2024-08-07 23:53:53] [data] 1.079ms, [model] 22910.599ms, [evaluate] 1.390ms, [calculate_loss] 62.730ms, [update] 104.987ms
+[2024-08-07 23:53:53] total_loss=2.372303039930305
+[2024-08-07 23:53:53] Valid-val, epoch=13 ----------
+[2024-08-07 23:53:58] loss=3.583402991479825, acc=0.574088440651668 (best=0.7222653219550039)
+[2024-08-07 23:53:58] Train, epoch=14 ----------
+[2024-08-07 23:54:22] [data] 1.072ms, [model] 20848.100ms, [evaluate] 1.215ms, [calculate_loss] 31.362ms, [update] 74.746ms
+[2024-08-07 23:54:22] total_loss=2.3117131169961422
+[2024-08-07 23:54:22] Valid-val, epoch=14 ----------
+[2024-08-07 23:54:26] Save epoch14_best_model.pth
+[2024-08-07 23:54:26] loss=2.5891303992067964, acc=0.7284716834755625 (best=0.7284716834755625)
+[2024-08-07 23:54:26] Train, epoch=15 ----------
+[2024-08-07 23:54:50] [data] 1.060ms, [model] 20877.516ms, [evaluate] 1.068ms, [calculate_loss] 31.047ms, [update] 74.623ms
+[2024-08-07 23:54:50] total_loss=2.272249425187403
+[2024-08-07 23:54:50] Valid-val, epoch=15 ----------
+[2024-08-07 23:54:54] loss=3.616899772611489, acc=0.6167571761055082 (best=0.7284716834755625)
+[2024-08-07 23:54:54] Train, epoch=16 ----------
+[2024-08-07 23:55:17] [data] 1.040ms, [model] 20584.317ms, [evaluate] 1.048ms, [calculate_loss] 30.629ms, [update] 79.250ms
+[2024-08-07 23:55:17] total_loss=2.263292001461496
+[2024-08-07 23:55:17] Valid-val, epoch=16 ----------
+[2024-08-07 23:55:21] loss=2.6054874637313734, acc=0.7098525989138867 (best=0.7284716834755625)
+[2024-08-07 23:55:21] Train, epoch=17 ----------
+[2024-08-07 23:55:46] [data] 1.066ms, [model] 21014.620ms, [evaluate] 1.091ms, [calculate_loss] 61.875ms, [update] 108.040ms
+[2024-08-07 23:55:46] total_loss=2.222240296188666
+[2024-08-07 23:55:46] Valid-val, epoch=17 ----------
+[2024-08-07 23:55:49] Save epoch17_best_model.pth
+[2024-08-07 23:55:49] loss=2.5302291878255603, acc=0.7292474786656322 (best=0.7292474786656322)
+[2024-08-07 23:55:49] Train, epoch=18 ----------
+[2024-08-07 23:56:14] [data] 1.046ms, [model] 21381.392ms, [evaluate] 1.064ms, [calculate_loss] 43.017ms, [update] 88.143ms
+[2024-08-07 23:56:14] total_loss=2.1646660923957826
+[2024-08-07 23:56:14] Valid-val, epoch=18 ----------
+[2024-08-07 23:56:18] loss=6.20818093694209, acc=0.2529092319627618 (best=0.7292474786656322)
+[2024-08-07 23:56:18] Train, epoch=19 ----------
+[2024-08-07 23:56:42] [data] 1.046ms, [model] 21323.439ms, [evaluate] 1.054ms, [calculate_loss] 30.991ms, [update] 72.915ms
+[2024-08-07 23:56:42] total_loss=2.1369723028066208
+[2024-08-07 23:56:42] Valid-val, epoch=19 ----------
+[2024-08-07 23:56:46] loss=2.7103813421458027, acc=0.6920093095422808 (best=0.7292474786656322)
+[2024-08-07 23:56:46] Train, epoch=20 ----------
+[2024-08-07 23:57:11] [data] 1.056ms, [model] 22032.860ms, [evaluate] 1.071ms, [calculate_loss] 67.725ms, [update] 112.264ms
+[2024-08-07 23:57:11] total_loss=2.044701680358575
+[2024-08-07 23:57:11] Valid-val, epoch=20 ----------
+[2024-08-07 23:57:16] loss=2.5767116990544428, acc=0.7292474786656322 (best=0.7292474786656322)
+[2024-08-07 23:57:16] Train, epoch=21 ----------
+[2024-08-07 23:57:41] [data] 1.066ms, [model] 21074.882ms, [evaluate] 1.089ms, [calculate_loss] 39.062ms, [update] 91.636ms
+[2024-08-07 23:57:41] total_loss=1.9934266932156621
+[2024-08-07 23:57:41] Valid-val, epoch=21 ----------
+[2024-08-07 23:57:45] Save epoch21_best_model.pth
+[2024-08-07 23:57:45] loss=2.586749936185945, acc=0.734678044996121 (best=0.734678044996121)
+[2024-08-07 23:57:45] Train, epoch=22 ----------
+[2024-08-07 23:58:09] [data] 1.065ms, [model] 21224.521ms, [evaluate] 1.068ms, [calculate_loss] 31.506ms, [update] 75.658ms
+[2024-08-07 23:58:09] total_loss=2.0225494698602327
+[2024-08-07 23:58:09] Valid-val, epoch=22 ----------
+[2024-08-07 23:58:13] loss=2.5795597874720584, acc=0.726144297905353 (best=0.734678044996121)
+[2024-08-07 23:58:13] Train, epoch=23 ----------
+[2024-08-07 23:58:37] [data] 1.067ms, [model] 21095.203ms, [evaluate] 1.071ms, [calculate_loss] 62.080ms, [update] 104.503ms
+[2024-08-07 23:58:37] total_loss=2.004868767942701
+[2024-08-07 23:58:37] Valid-val, epoch=23 ----------
+[2024-08-07 23:58:41] loss=2.6018971991779454, acc=0.734678044996121 (best=0.734678044996121)
+[2024-08-07 23:58:41] Train, epoch=24 ----------
+[2024-08-07 23:59:05] [data] 1.059ms, [model] 20304.389ms, [evaluate] 1.061ms, [calculate_loss] 62.826ms, [update] 106.042ms
+[2024-08-07 23:59:05] total_loss=1.9884713895466863
+[2024-08-07 23:59:05] Valid-val, epoch=24 ----------
+[2024-08-07 23:59:09] loss=2.6120438350088566, acc=0.7323506594259116 (best=0.734678044996121)
+[2024-08-07 23:59:09] Train, epoch=25 ----------
+[2024-08-07 23:59:34] [data] 1.091ms, [model] 21287.084ms, [evaluate] 1.184ms, [calculate_loss] 31.003ms, [update] 78.407ms
+[2024-08-07 23:59:34] total_loss=1.9651439644852462
+[2024-08-07 23:59:34] Valid-val, epoch=25 ----------
+[2024-08-07 23:59:38] loss=2.6324372380347656, acc=0.7300232738557021 (best=0.734678044996121)
+[2024-08-07 23:59:38] Train, epoch=26 ----------
+[2024-08-08 00:00:05] [data] 1.077ms, [model] 22809.834ms, [evaluate] 1.344ms, [calculate_loss] 36.687ms, [update] 79.912ms
+[2024-08-08 00:00:05] total_loss=1.9517261818963654
+[2024-08-08 00:00:05] Valid-val, epoch=26 ----------
+[2024-08-08 00:00:09] loss=2.785776149218539, acc=0.730799069045772 (best=0.734678044996121)
+[2024-08-08 00:00:09] Train, epoch=27 ----------
+[2024-08-08 00:00:33] [data] 1.050ms, [model] 20610.523ms, [evaluate] 1.079ms, [calculate_loss] 42.292ms, [update] 86.933ms
+[2024-08-08 00:00:33] total_loss=1.9783499267636513
+[2024-08-08 00:00:33] Valid-val, epoch=27 ----------
+[2024-08-08 00:00:37] Save epoch27_best_model.pth
+[2024-08-08 00:00:37] loss=2.7276975662787817, acc=0.7362296353762606 (best=0.7362296353762606)
+[2024-08-08 00:00:37] Train, epoch=28 ----------
+[2024-08-08 00:01:04] [data] 1.119ms, [model] 22821.548ms, [evaluate] 1.382ms, [calculate_loss] 30.569ms, [update] 73.784ms
+[2024-08-08 00:01:04] total_loss=1.9794014558500173
+[2024-08-08 00:01:04] Valid-val, epoch=28 ----------
+[2024-08-08 00:01:09] Save epoch28_best_model.pth
+[2024-08-08 00:01:09] loss=2.6614019080961833, acc=0.7377812257564003 (best=0.7377812257564003)
+[2024-08-08 00:01:09] Train, epoch=29 ----------
+[2024-08-08 00:01:37] [data] 1.173ms, [model] 23211.750ms, [evaluate] 1.328ms, [calculate_loss] 31.525ms, [update] 72.211ms
+[2024-08-08 00:01:37] total_loss=1.9470821713914677
+[2024-08-08 00:01:37] Valid-val, epoch=29 ----------
+[2024-08-08 00:01:41] loss=2.6676077814967805, acc=0.7354538401861909 (best=0.7377812257564003)
+[2024-08-08 00:01:41] Train, epoch=30 ----------
+[2024-08-08 00:02:05] [data] 1.050ms, [model] 20622.604ms, [evaluate] 1.065ms, [calculate_loss] 58.961ms, [update] 101.955ms
+[2024-08-08 00:02:05] total_loss=1.9514114705883727
+[2024-08-08 00:02:05] Valid-val, epoch=30 ----------
+[2024-08-08 00:02:09] loss=2.62246528200811, acc=0.7269200930954228 (best=0.7377812257564003)
+[2024-08-08 00:02:09] Train, epoch=31 ----------
+[2024-08-08 00:02:34] [data] 1.045ms, [model] 22002.305ms, [evaluate] 1.102ms, [calculate_loss] 36.678ms, [update] 78.604ms
+[2024-08-08 00:02:34] total_loss=1.9345211153127708
+[2024-08-08 00:02:34] Valid-val, epoch=31 ----------
+[2024-08-08 00:02:39] loss=2.6794878115850054, acc=0.7370054305663305 (best=0.7377812257564003)
+[2024-08-08 00:02:39] Train, epoch=32 ----------
+[2024-08-08 00:03:06] [data] 1.132ms, [model] 23155.472ms, [evaluate] 1.334ms, [calculate_loss] 31.591ms, [update] 72.974ms
+[2024-08-08 00:03:06] total_loss=1.948852405499439
+[2024-08-08 00:03:06] Valid-val, epoch=32 ----------
+[2024-08-08 00:03:09] loss=2.694041525143075, acc=0.734678044996121 (best=0.7377812257564003)
+[2024-08-08 00:03:09] Train, epoch=33 ----------
+[2024-08-08 00:03:33] [data] 1.054ms, [model] 20305.573ms, [evaluate] 1.077ms, [calculate_loss] 46.079ms, [update] 88.596ms
+[2024-08-08 00:03:33] total_loss=1.9292115836727375
+[2024-08-08 00:03:33] Valid-val, epoch=33 ----------
+[2024-08-08 00:03:37] loss=2.652576054039623, acc=0.734678044996121 (best=0.7377812257564003)
+[2024-08-08 00:03:37] Train, epoch=34 ----------
+[2024-08-08 00:04:02] [data] 1.109ms, [model] 22154.517ms, [evaluate] 1.173ms, [calculate_loss] 59.764ms, [update] 111.370ms
+[2024-08-08 00:04:02] total_loss=1.9232730310790394
+[2024-08-08 00:04:02] Valid-val, epoch=34 ----------
+[2024-08-08 00:04:07] loss=2.6444371381039025, acc=0.7370054305663305 (best=0.7377812257564003)
+[2024-08-08 00:04:07] Train, epoch=35 ----------
+[2024-08-08 00:04:31] [data] 1.064ms, [model] 21051.973ms, [evaluate] 1.148ms, [calculate_loss] 31.597ms, [update] 73.116ms
+[2024-08-08 00:04:31] total_loss=1.9589085605679726
+[2024-08-08 00:04:31] Valid-val, epoch=35 ----------
+[2024-08-08 00:04:37] Save epoch35_best_model.pth
+[2024-08-08 00:04:37] loss=2.7154545186562906, acc=0.7385570209464701 (best=0.7385570209464701)
+[2024-08-08 00:04:37] Train, epoch=36 ----------
+[2024-08-08 00:05:02] [data] 1.091ms, [model] 21688.869ms, [evaluate] 1.202ms, [calculate_loss] 42.771ms, [update] 84.998ms
+[2024-08-08 00:05:02] total_loss=1.9240508923725206
+[2024-08-08 00:05:02] Valid-val, epoch=36 ----------
+[2024-08-08 00:05:07] loss=2.662628184925964, acc=0.7377812257564003 (best=0.7385570209464701)
+[2024-08-08 00:05:07] Train, epoch=37 ----------
+[2024-08-08 00:05:32] [data] 1.089ms, [model] 22026.521ms, [evaluate] 1.239ms, [calculate_loss] 30.951ms, [update] 74.490ms
+[2024-08-08 00:05:32] total_loss=1.926452919171781
+[2024-08-08 00:05:32] Valid-val, epoch=37 ----------
+[2024-08-08 00:05:36] loss=2.6611362184268548, acc=0.7370054305663305 (best=0.7385570209464701)
+[2024-08-08 00:05:36] Train, epoch=38 ----------
+[2024-08-08 00:06:01] [data] 1.063ms, [model] 21807.369ms, [evaluate] 1.122ms, [calculate_loss] 51.441ms, [update] 95.051ms
+[2024-08-08 00:06:01] total_loss=1.9573158174144978
+[2024-08-08 00:06:01] Valid-val, epoch=38 ----------
+[2024-08-08 00:06:06] loss=2.673545015792314, acc=0.7385570209464701 (best=0.7385570209464701)
+[2024-08-08 00:06:06] Train, epoch=39 ----------
+[2024-08-08 00:06:32] [data] 1.063ms, [model] 22350.036ms, [evaluate] 1.236ms, [calculate_loss] 40.688ms, [update] 83.075ms
+[2024-08-08 00:06:32] total_loss=1.9358785145136774
+[2024-08-08 00:06:32] Valid-val, epoch=39 ----------
+[2024-08-08 00:06:36] loss=2.6385601800573806, acc=0.734678044996121 (best=0.7385570209464701)
+[2024-08-08 00:06:36] Train, epoch=40 ----------
+[2024-08-08 00:06:59] [data] 1.048ms, [model] 19907.519ms, [evaluate] 1.089ms, [calculate_loss] 40.507ms, [update] 83.957ms
+[2024-08-08 00:06:59] total_loss=1.9354070291227223
+[2024-08-08 00:06:59] Valid-val, epoch=40 ----------
+[2024-08-08 00:07:03] loss=2.6649024482842467, acc=0.7354538401861909 (best=0.7385570209464701)
+[2024-08-08 00:07:03] Train, epoch=41 ----------
+[2024-08-08 00:07:28] [data] 1.065ms, [model] 21558.313ms, [evaluate] 1.093ms, [calculate_loss] 31.355ms, [update] 72.631ms
+[2024-08-08 00:07:28] total_loss=1.9299422397905466
+[2024-08-08 00:07:28] Valid-val, epoch=41 ----------
+[2024-08-08 00:07:32] loss=2.658061177347685, acc=0.734678044996121 (best=0.7385570209464701)
+[2024-08-08 00:07:32] Train, epoch=42 ----------
+[2024-08-08 00:07:56] [data] 1.051ms, [model] 20753.163ms, [evaluate] 1.102ms, [calculate_loss] 30.648ms, [update] 75.713ms
+[2024-08-08 00:07:56] total_loss=1.9424765088120286
+[2024-08-08 00:07:56] Valid-val, epoch=42 ----------
+[2024-08-08 00:07:59] loss=2.6608514563809815, acc=0.7354538401861909 (best=0.7385570209464701)
+[2024-08-08 00:07:59] Train, epoch=43 ----------
+[2024-08-08 00:08:21] [data] 1.051ms, [model] 18913.649ms, [evaluate] 1.076ms, [calculate_loss] 41.391ms, [update] 86.413ms
+[2024-08-08 00:08:21] total_loss=1.9273302477233263
+[2024-08-08 00:08:21] Valid-val, epoch=43 ----------
+[2024-08-08 00:08:25] loss=2.6341419930232415, acc=0.730799069045772 (best=0.7385570209464701)
+[2024-08-08 00:08:25] Train, epoch=44 ----------
+[2024-08-08 00:08:47] [data] 1.060ms, [model] 19387.496ms, [evaluate] 1.135ms, [calculate_loss] 31.102ms, [update] 71.964ms
+[2024-08-08 00:08:47] total_loss=1.9655748739534495
+[2024-08-08 00:08:47] Valid-val, epoch=44 ----------
+[2024-08-08 00:08:50] loss=2.695451474171262, acc=0.7354538401861909 (best=0.7385570209464701)
+[2024-08-08 00:08:50] Train, epoch=45 ----------
+[2024-08-08 00:09:15] [data] 1.128ms, [model] 21525.697ms, [evaluate] 1.276ms, [calculate_loss] 87.898ms, [update] 130.914ms
+[2024-08-08 00:09:15] total_loss=1.9258230503724545
+[2024-08-08 00:09:15] Valid-val, epoch=45 ----------
+[2024-08-08 00:09:18] loss=2.6567222474618326, acc=0.7362296353762606 (best=0.7385570209464701)
+[2024-08-08 00:09:18] Train, epoch=46 ----------
+[2024-08-08 00:09:42] [data] 1.063ms, [model] 21023.651ms, [evaluate] 1.076ms, [calculate_loss] 31.443ms, [update] 72.226ms
+[2024-08-08 00:09:42] total_loss=1.940436209707844
+[2024-08-08 00:09:42] Valid-val, epoch=46 ----------
+[2024-08-08 00:09:46] Save epoch46_best_model.pth
+[2024-08-08 00:09:46] loss=2.6726701688729486, acc=0.73933281613654 (best=0.73933281613654)
+[2024-08-08 00:09:46] Train, epoch=47 ----------
+[2024-08-08 00:10:11] [data] 1.071ms, [model] 20507.517ms, [evaluate] 1.202ms, [calculate_loss] 62.811ms, [update] 105.445ms
+[2024-08-08 00:10:11] total_loss=1.9432733822842034
+[2024-08-08 00:10:11] Valid-val, epoch=47 ----------
+[2024-08-08 00:10:15] loss=2.6740090691645633, acc=0.7385570209464701 (best=0.73933281613654)
+[2024-08-08 00:10:15] Train, epoch=48 ----------
+[2024-08-08 00:10:38] [data] 1.052ms, [model] 19660.687ms, [evaluate] 1.071ms, [calculate_loss] 31.273ms, [update] 71.955ms
+[2024-08-08 00:10:38] total_loss=1.9238856573494114
+[2024-08-08 00:10:38] Valid-val, epoch=48 ----------
+[2024-08-08 00:10:42] loss=2.6310718479408046, acc=0.7315748642358417 (best=0.73933281613654)
+[2024-08-08 00:10:42] Train, epoch=49 ----------
+[2024-08-08 00:11:05] [data] 1.049ms, [model] 20179.070ms, [evaluate] 1.062ms, [calculate_loss] 31.111ms, [update] 73.363ms
+[2024-08-08 00:11:05] total_loss=1.9399575357534447
+[2024-08-08 00:11:05] Valid-val, epoch=49 ----------
+[2024-08-08 00:11:08] loss=2.65154072256214, acc=0.7377812257564003 (best=0.73933281613654)
+[2024-08-08 00:11:08] Save epoch49_final_model.pth
+[2024-08-08 00:11:08] Valid-val, epoch=49 ----------
+[2024-08-08 00:11:11] loss=2.65154072256214, acc=0.7377812257564003 (best=0.73933281613654)
+[2024-08-08 00:11:11] Post-evaluate, allepo_49.50_test ----------
+[2024-08-08 00:11:11] acc=0.7266462480857581
+[2024-08-08 00:11:11] Settle results.----------
+[2024-08-08 00:11:54] Max GPU mem = 146.0 MB
+[2024-08-08 00:11:54] [load_data] 25386.608ms, [train_an_epoch] 1212947.762ms, [valid_an_epoch] 206624.451ms, [settle_results] 42252.616ms
+[2024-08-08 00:11:54] Post-evaluate, final._.T_indi ----------
+[2024-08-08 00:11:54] acc=0.7663934426229508
+[2024-08-08 00:11:54] Finish.
+
+
+
+
+
+
+
+
+[2024-11-12 15:20:36] final.together----------Work dir: ../Results/NACC_AIBL/DN0.3_image_3/20240724_Causal/p.split2020.clf_NC0.MCI1.AD2/T20240807234702.654_f19c1593a2b1cb148a11987e3e29caba_F0S42
+[2024-11-12 15:20:36] start.emb----------Work dir: ../Results/NACC_AIBL/DN0.3_image_3/20240724_Causal/p.split2020.clf_NC0.MCI1.AD2/T20240807234702.654_f19c1593a2b1cb148a11987e3e29caba_F0S42
+[2024-11-12 15:20:36] Load data.
+[2024-11-12 15:20:36] Load data.
+[2024-11-12 15:20:36] Labels: NC(0):4119, AD(2):1359, MCI(1):1042
+[2024-11-12 15:20:36] Labels: NC(0):4119, AD(2):1359, MCI(1):1042
+[2024-11-12 15:20:36] Labels_test: NC(0):912, MCI(1):168, AD(2):140
+[2024-11-12 15:20:36] Labels_test: NC(0):912, MCI(1):168, AD(2):140
+[2024-11-12 15:20:36] Train data: [Demo] ['SEX', 'NACCAGE', 'NACCAPOE', 'NACCNE4S'], [Info] ['NACCADC', 'MRIFIELDj', 'MRIMANUj', 'MRIMODLj', 'MRITHICKj', 'Label', 'NACCID']
+[2024-11-12 15:20:36] Train data: [Demo] ['SEX', 'NACCAGE', 'NACCAPOE', 'NACCNE4S'], [Info] ['NACCADC', 'MRIFIELDj', 'MRIMANUj', 'MRIMODLj', 'MRITHICKj', 'Label', 'NACCID']
+[2024-11-12 15:20:36] Test data: [Demo] ['SEX', 'NACCAGE', 'NACCAPOE', 'NACCNE4S'], [Info] ['NACCADC', 'MRIFIELDj', 'MRIMANUj', 'MRIMODLj', 'MRITHICKj', 'Label', 'NACCID']
+[2024-11-12 15:20:36] Test data: [Demo] ['SEX', 'NACCAGE', 'NACCAPOE', 'NACCNE4S'], [Info] ['NACCADC', 'MRIFIELDj', 'MRIMANUj', 'MRIMODLj', 'MRITHICKj', 'Label', 'NACCID']
+[2024-11-12 15:20:36] [MRIFIELDj] 3, [MRIMANUj] 4, [MRIMODLj] 23, [MRITHICKj] 14, [NACCADC] 25
+[2024-11-12 15:20:36] [MRIFIELDj] 3, [MRIMANUj] 4, [MRIMODLj] 23, [MRITHICKj] 14, [NACCADC] 25
+[2024-11-12 15:23:17] Sample number:	[train] 3925, [val] 1289, [test] 1306, [indi] 1220
+[2024-11-12 15:23:17] Sample number:	[train] 3925, [val] 1289, [test] 1306, [indi] 1220
+[2024-11-12 15:23:17] Initialize algorithm.
+[2024-11-12 15:23:17] Initialize algorithm.
+[2024-11-12 15:23:17] n_inputs: [Demo] 4, [Info] 7, [Env] 52, [MRI] [60, 72, 60]
+[2024-11-12 15:23:17] n_inputs: [Demo] 4, [Info] 7, [Env] 52, [MRI] [60, 72, 60]
+[2024-11-12 15:23:19] groups_nonMRI: [Demo] 4
+[2024-11-12 15:23:19] groups_nonMRI: [Demo] 4
+[2024-11-12 15:23:20] Post-evaluate, final.T_train ----------
+[2024-11-12 15:23:20] Post-emb, start.emb ----------
+[2024-11-12 15:23:21] acc=0.8040764331210191
+[2024-11-12 15:23:21] Post-evaluate, final.T_val ----------
+[2024-11-12 15:23:22] acc=0.7377812257564003
+[2024-11-12 15:23:22] Post-evaluate, final.T_test ----------
+[2024-11-12 15:23:22] acc=0.7266462480857581
+[2024-11-12 15:23:22] Post-evaluate, final.T_indi ----------
+[2024-11-12 15:23:23] acc=0.7663934426229508
+[2024-11-12 15:23:23] Post-emb, final.emb ----------
+[2024-11-12 15:23:23] Finish.
+[2024-11-12 15:23:26] Finish.
+
+
+
+
+[2024-11-12 15:23:28] final.emb----------Work dir: ../Results/NACC_AIBL/DN0.3_image_3/20240724_Causal/p.split2020.clf_NC0.MCI1.AD2/T20240807234702.654_f19c1593a2b1cb148a11987e3e29caba_F0S42
+[2024-11-12 15:23:28] Load data.
+[2024-11-12 15:23:28] Labels: NC(0):4119, AD(2):1359, MCI(1):1042
+[2024-11-12 15:23:28] Labels_test: NC(0):912, MCI(1):168, AD(2):140
+[2024-11-12 15:23:28] Train data: [Demo] ['SEX', 'NACCAGE', 'NACCAPOE', 'NACCNE4S'], [Info] ['NACCADC', 'MRIFIELDj', 'MRIMANUj', 'MRIMODLj', 'MRITHICKj', 'Label', 'NACCID']
+[2024-11-12 15:23:28] Test data: [Demo] ['SEX', 'NACCAGE', 'NACCAPOE', 'NACCNE4S'], [Info] ['NACCADC', 'MRIFIELDj', 'MRIMANUj', 'MRIMODLj', 'MRITHICKj', 'Label', 'NACCID']
+[2024-11-12 15:23:28] [MRIFIELDj] 3, [MRIMANUj] 4, [MRIMODLj] 23, [MRITHICKj] 14, [NACCADC] 25
+[2024-11-12 15:26:38] Sample number:	[train] 3925, [val] 1289, [test] 1306, [indi] 1220
+[2024-11-12 15:26:38] Initialize algorithm.
+[2024-11-12 15:26:38] n_inputs: [Demo] 4, [Info] 7, [Env] 52, [MRI] [60, 72, 60]
+[2024-11-12 15:26:40] groups_nonMRI: [Demo] 4
+[2024-11-12 15:26:40] Post-emb, final.emb ----------
+[2024-11-12 15:26:44] Finish.

@@ -1,0 +1,136 @@
+{
+    "algorithm": {
+        "ampl": {
+            "kind": "VarDiv",
+            "pre_epoch": 10
+        },
+        "fuse": null,
+        "info": {
+            "coeff": 0,
+            "dynamic": "ori",
+            "eps": 0
+        },
+        "loss": {
+            "GCE_q": 0.7,
+            "ampl_type": "comb",
+            "cf_coeff": 40,
+            "dist_coeff": 0,
+            "dist_type": "zero",
+            "weight_type": "zero"
+        },
+        "model1": {
+            "bias": {
+                "BN": false,
+                "dropout": 0,
+                "name": "FullyConnectRBD"
+            },
+            "enc": {
+                "BN": true,
+                "depth": 2,
+                "dropout": 0,
+                "kernel": [
+                    [
+                        7,
+                        3,
+                        0
+                    ],
+                    [
+                        4,
+                        2,
+                        0
+                    ]
+                ],
+                "name": "CNNTriangle",
+                "width": 64
+            },
+            "lr_c": 1
+        },
+        "model2": {
+            "bias": {
+                "BN": false,
+                "dropout": 0,
+                "name": "FullyConnectRBD"
+            },
+            "dim": 128,
+            "enc": {
+                "BN": false,
+                "dropout": 0,
+                "hidden": [
+                    128
+                ],
+                "name": "MLPsRBD"
+            },
+            "lr_c": 1
+        },
+        "model3": {
+            "bias": {
+                "BN": false,
+                "dropout": 0,
+                "name": "FullyConnectRBD"
+            },
+            "dim": 128,
+            "enc": {
+                "BN": false,
+                "dropout": 0,
+                "name": "FullyConnectRBD"
+            },
+            "env": {
+                "BN": false,
+                "dropout": 0,
+                "hidden": [
+                    128
+                ],
+                "name": "MLPsRBD"
+            },
+            "lr_c": 1
+        },
+        "name": "algorithmsMul224.Algorithm1",
+        "optimizer": {
+            "lr": 0.0001,
+            "name": "Adam",
+            "weight_decay": 0
+        },
+        "sch_split": false,
+        "scheduler": {
+            "cooldown": 0,
+            "factor": 0.1,
+            "min_lr": 0,
+            "mode": "min",
+            "name": "ReduceLROnPlateau",
+            "patience": 10,
+            "threshold": 0.0001
+        }
+    },
+    "batch_size": 16,
+    "data": {
+        "csv_dir": "../20231223_Data/dataset/NACC/DN0.3_image_3",
+        "env": [
+            "MRIFIELDj",
+            "MRIMANUj",
+            "MRIMODLj",
+            "MRITHICKj",
+            "NACCADC"
+        ],
+        "pkl_path": "../20231223_Data/dataset/NACC/(1e-02;75;MinMax;clip).npy_ave_3.pkl",
+        "split_package": "p.split2020"
+    },
+    "early_stop": 10,
+    "feeder": "tools.feedersOH.Feeder",
+    "fold": 0,
+    "impute": "mean",
+    "normalize": "std",
+    "num_epochs": 50,
+    "num_workers": 4,
+    "phase": "train",
+    "print_log": true,
+    "save_dir": "../Results/NACC_AIBL/DN0.3_image_3/20240724_Causal",
+    "save_interval": 1,
+    "seed": 42,
+    "split": 2020,
+    "split_mode": "patient",
+    "task": "clf_NC0.MCI1.AD2",
+    "test_data": {
+        "csv_dir": "../20231223_Data/dataset/AIBL/DN0.3_image_3",
+        "pkl_path": "../20231223_Data/dataset/AIBL/(1e-02;75;MinMax;clip).npy_ave_3.pkl"
+    }
+}

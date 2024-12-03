@@ -1,0 +1,523 @@
+Group,Variable name,Range,Type,Min,Max,Form,Short descriptor,AllowableCodes
+MRIValue,NACCICV,964.634~1873.540,continuous (float),964.634,1873.54,imaging,Total intracranial volume (cc),
+MRIValue,NACCBRNV,659.178~1429.340,continuous (float),659.178,1429.34,imaging,Total brain volume (cc),
+MRIValue,NACCWMVL,269.770~816.860,continuous (float),269.77,816.86,imaging,Total white matter volume (cc),
+MRIValue,CSFVOL,174.590~623.658,continuous (float),174.59,623.658,imaging,Total brain cerebrospinal fluid volume (cc),
+MRIValue,GRAYVOL,330.807~824.030,continuous (float),330.807,824.03,imaging,Total brain gray matter volume (cc),
+MRIValue,WHITEVOL,248.950~693.520,continuous (float),248.95,693.52,imaging,Total brain white matter volume (cc),
+MRIValue,WMHVOL,0.000~210.100,continuous (float),0.0,210.1,imaging,Total brain white matter hyperintensity volume (cc),
+MRIValue,HIPPOVOL,0.958~7.995,continuous (float),0.9577,7.9945,imaging,Segmented total hippocampi volume (cc),
+MRIValue,CEREALL,822.075~1639.250,continuous (float),822.075,1639.25,imaging,Total cerebrum cranial volume (cc),
+MRIValue,CERETISS,605.504~1266.500,continuous (float),605.504,1266.5,imaging,Total cerebrum brain volume (cc),
+MRIValue,CERECSF,134.364~533.409,continuous (float),134.364,533.409,imaging,Total cerebrum cerebrospinal fluid volume (cc),
+MRIValue,CEREGR,288.183~699.550,continuous (float),288.183,699.55,imaging,Total cerebrum gray matter volume (cc),
+MRIValue,CEREWH,223.810~634.397,continuous (float),223.81,634.397,imaging,Total cerebrum white matter volume (cc),
+MRIValue,LHIPPO,0.581~4.833,continuous (float),0.5811,4.8327,imaging,Segmented left hippocampus volume (cc),
+MRIValue,RHIPPO,0.377~4.864,continuous (float),0.3765,4.8639,imaging,Segmented right hippocampus volume (cc),
+MRIValue,LLATVENT,2.108~102.520,continuous (float),2.1084,102.52,imaging,Segmented left lateral ventricle volume (cc),
+MRIValue,RLATVENT,2.101~134.825,continuous (float),2.1012,134.825,imaging,Segmented right lateral ventricle volume (cc),
+MRIValue,LATVENT,4.210~214.111,continuous (float),4.2096,214.111,imaging,Segmented total lateral ventricle volume (cc),
+MRIValue,THIRVENT,0.222~4.100,continuous (float),0.2217,4.1,imaging,Segmented total third ventricle volume (cc),
+MRIValue,LFRCORT,5.734~128.380,continuous (float),5.7343,128.38,imaging,Segmented left frontal lobe cortical gray matter volume (cc),
+MRIValue,RFRCORT,18.003~127.430,continuous (float),18.0035,127.43,imaging,Segmented right frontal lobe cortical gray matter volume (cc),
+MRIValue,FRCORT,24.253~256.660,continuous (float),24.2525,256.66,imaging,Segmented total frontal lobe cortical gray matter volume (cc),
+MRIValue,LOCCORT,14.593~47.106,continuous (float),14.5931,47.1058,imaging,Segmented left occipital lobe cortical gray matter volume (cc),
+MRIValue,ROCCORT,14.599~49.190,continuous (float),14.599,49.19,imaging,Segmented right occipital lobe cortical gray matter volume (cc),
+MRIValue,OCCCORT,29.582~87.900,continuous (float),29.5819,87.9,imaging,Segmented total occipital lobe cortical gray matter volume (cc),
+MRIValue,LPARCORT,3.509~71.940,continuous (float),3.5093,71.94,imaging,Segmented left parietal lobe cortical gray matter volume (cc),
+MRIValue,RPARCORT,12.744~71.788,continuous (float),12.7437,71.7878,imaging,Segmented right parietal lobe cortical gray matter volume (cc),
+MRIValue,PARCORT,17.675~141.050,continuous (float),17.6746,141.05,imaging,Segmented total parietal lobe cortical gray matter volume (cc),
+MRIValue,LTEMPCOR,19.430~85.430,continuous (float),19.4302,85.43,imaging,Segmented left temporal lobe cortical gray matter volume (cc),
+MRIValue,RTEMPCOR,18.913~85.570,continuous (float),18.9126,85.57,imaging,Segmented right temporal lobe cortical gray matter volume (cc),
+MRIValue,TEMPCOR,38.351~171.550,continuous (float),38.3506,171.55,imaging,Segmented total temporal lobe cortical gray matter volume (cc),
+MRIValue,LCAC,1.410~6.940,continuous (float),1.41,6.94,imaging,Left caudal anterior cingulate gray matter volume (cc),
+MRIValue,LCACM,0.512~4.090,continuous (float),0.5122,4.09,imaging,Left caudal anterior cingulate mean cortical thickness (mm),
+MRIValue,LCMF,1.444~8.574,continuous (float),1.4445,8.574,imaging,Left caudal middle frontal gray matter volume (cc),
+MRIValue,LCMFM,0.550~4.304,continuous (float),0.5498,4.3038,imaging,Left caudal middle frontal mean cortical thickness (mm),
+MRIValue,LCUN,1.620~8.330,continuous (float),1.62,8.33,imaging,Left cuneus gray matter volume (cc),
+MRIValue,LCUNM,0.502~3.301,continuous (float),0.5018,3.3008,imaging,Left cuneus mean cortical thickness (mm),
+MRIValue,LENT,0.774~6.695,continuous (float),0.7741,6.695,imaging,Left entorhinal gray matter volume (cc) ,
+MRIValue,LENTM,0.665~6.441,continuous (float),0.6654,6.4408,imaging,Left entorhinal mean cortical thickness (mm),
+MRIValue,LFUS,3.024~17.585,continuous (float),3.0238,17.585,imaging,Left fusiform gray matter volume (cc),
+MRIValue,LFUSM,1.069~4.943,continuous (float),1.0692,4.9434,imaging,Left fusiform mean cortical thickness (mm),
+MRIValue,LINFPAR,4.693~19.219,continuous (float),4.6934,19.2189,imaging,Left inferior parietal gray matter volume (cc),
+MRIValue,LINFPARM,0.850~4.743,continuous (float),0.8498,4.7427,imaging,Left inferior parietal mean cortical thickness (mm),
+MRIValue,LINFTEMP,3.613~15.460,continuous (float),3.6134,15.46,imaging,Left inferior temporal gray matter volume (cc),
+MRIValue,LINFTEMM,0.631~5.396,continuous (float),0.6314,5.3961,imaging,Left inferior temporal mean cortical thickness (mm),
+MRIValue,LINSULA,2.655~9.270,continuous (float),2.6547,9.27,imaging,Left insula gray matter volume (cc),
+MRIValue,LINSULAM,1.260~4.740,continuous (float),1.2604,4.74,imaging,Left insula mean cortical thickness (mm),
+MRIValue,LISTHC,1.043~5.106,continuous (float),1.0432,5.106,imaging,Left isthmus cingulate gray matter volume (cc),
+MRIValue,LISTHCM,0.841~3.540,continuous (float),0.8405,3.54,imaging,Left isthmus cingulate mean cortical thickness (mm),
+MRIValue,LLATOCC,4.386~18.540,continuous (float),4.3856,18.54,imaging,Left lateral occipital gray matter volume (cc),
+MRIValue,LLATOCCM,0.651~4.192,continuous (float),0.6508,4.1922,imaging,Left lateral occipital mean cortical thickness (mm),
+MRIValue,LLATORBF,1.779~11.940,continuous (float),1.7793,11.94,imaging,Left lateral orbitofrontal gray matter volume (cc),
+MRIValue,LLATORBM,1.021~3.970,continuous (float),1.0207,3.97,imaging,Left lateral orbitofrontal mean cortical thickness (mm),
+MRIValue,LLING,3.192~11.940,continuous (float),3.1925,11.94,imaging,Left lingual gray matter volume (cc),
+MRIValue,LLINGM,0.636~4.524,continuous (float),0.6359,4.5243,imaging,Left lingual mean cortical thickness (mm),
+MRIValue,LMEDORBF,1.828~7.070,continuous (float),1.8278,7.07,imaging,Left medial orbitofrontal gray matter volume (cc),
+MRIValue,LMEDORBM,0.684~4.271,continuous (float),0.6842,4.2715,imaging,Left medial orbitofrontal mean cortical thickness (mm),
+MRIValue,LMIDTEMP,5.374~20.270,continuous (float),5.3736,20.27,imaging,Left middle temporal gray matter volume (cc),
+MRIValue,LMIDTEMM,0.620~4.737,continuous (float),0.62,4.7372,imaging,Left middle temporal mean cortical thickness (mm),
+MRIValue,LPARCEN,1.362~7.690,continuous (float),1.362,7.69,imaging,Left paracentral gray matter volume (cc),
+MRIValue,LPARCENM,0.397~3.431,continuous (float),0.3974,3.4309,imaging,Left paracentral mean cortical thickness (mm),
+MRIValue,LPARHIP,0.773~6.270,continuous (float),0.7731,6.27,imaging,Left parahippocampal gray matter volume (cc),
+MRIValue,LPARHIPM,0.771~3.253,continuous (float),0.7712,3.2529,imaging,Left parahippocampal mean cortical thickness (mm),
+MRIValue,LPARSOP,1.629~7.636,continuous (float),1.629,7.6365,imaging,Left pars opercularis gray matter volume (cc),
+MRIValue,LPARSOPM,0.491~3.330,continuous (float),0.4909,3.33,imaging,Left pars opercularis mean cortical thickness (mm),
+MRIValue,LPARORB,0.408~4.149,continuous (float),0.4082,4.149,imaging,Left pars orbitalis gray matter volume (cc),
+MRIValue,LPARORBM,0.771~4.070,continuous (float),0.7714,4.07,imaging,Left pars orbitalis mean cortical thickness (mm),
+MRIValue,LPARTRI,1.433~8.117,continuous (float),1.4325,8.1168,imaging,Left pars triangularis gray matter volume (cc),
+MRIValue,LPARTRIM,0.769~3.488,continuous (float),0.7692,3.488,imaging,Left pars triangularis mean cortical thickness (mm),
+MRIValue,LPERCAL,0.711~5.704,continuous (float),0.711,5.704,imaging,Left pericalcarine gray matter volume (cc),
+MRIValue,LPERCALM,0.340~4.449,continuous (float),0.3396,4.449,imaging,Left pericalcarine mean cortical thickness (mm),
+MRIValue,LPOSCEN,3.940~14.750,continuous (float),3.9396,14.75,imaging,Left postcentral gray matter volume (cc),
+MRIValue,LPOSCENM,0.592~3.060,continuous (float),0.5921,3.06,imaging,Left postcentral mean cortical thickness (mm),
+MRIValue,LPOSCIN,2.031~7.196,continuous (float),2.031,7.196,imaging,Left posterior cingulate gray matter volume (cc),
+MRIValue,LPOSCINM,0.502~3.519,continuous (float),0.5024,3.5195,imaging,Left posterior cingulate mean cortical thickness (mm),
+MRIValue,LPRECEN,3.804~20.370,continuous (float),3.804,20.37,imaging,Left precentral gray matter volume (cc),
+MRIValue,LPRECENM,0.440~3.692,continuous (float),0.4398,3.692,imaging,Left precentral mean cortical thickness (mm),
+MRIValue,LPRECUN,3.597~14.914,continuous (float),3.5969,14.914,imaging,Left precuneus gray matter volume (cc),
+MRIValue,LPRECUNM,0.608~4.379,continuous (float),0.6084,4.3791,imaging,Left precuneus mean cortical thickness (mm),
+MRIValue,LROSANC,1.286~7.180,continuous (float),1.2855,7.18,imaging,Left rostral anterior cingulate gray matter volume (cc),
+MRIValue,LROSANCM,0.725~4.866,continuous (float),0.7245,4.8662,imaging,Left rostral anterior cingulate mean cortical thickness (mm),
+MRIValue,LROSMF,4.775~17.916,continuous (float),4.775,17.9156,imaging,Left rostral middle frontal gray matter volume (cc),
+MRIValue,LROSMFM,0.610~4.258,continuous (float),0.61,4.2578,imaging,Left rostral middle frontal mean cortical thickness (mm),
+MRIValue,LSUPFR,9.659~35.940,continuous (float),9.6585,35.94,imaging,Left superior frontal gray matter volume (cc),
+MRIValue,LSUPFRM,0.651~3.881,continuous (float),0.6506,3.8806,imaging,Left superior frontal mean cortical thickness (mm),
+MRIValue,LSUPPAR,4.113~19.700,continuous (float),4.1127,19.7,imaging,Left superior parietal gray matter volume (cc),
+MRIValue,LSUPPARM,0.584~3.063,continuous (float),0.5842,3.0628,imaging,Left superior parietal mean cortical thickness (mm),
+MRIValue,LSUPTEM,6.831~23.700,continuous (float),6.8312,23.7,imaging,Left superior temporal gray matter volume (cc),
+MRIValue,LSUPTEMM,0.649~3.301,continuous (float),0.6494,3.3013,imaging,Left superior temporal mean cortical thickness (mm),
+MRIValue,LSUPMAR,3.926~17.072,continuous (float),3.9259,17.072,imaging,Left supramarginal gray matter volume (cc),
+MRIValue,LSUPMARM,0.732~3.682,continuous (float),0.7324,3.6822,imaging,Left supramarginal mean cortical thickness (mm),
+MRIValue,LTRTEM,0.183~2.030,continuous (float),0.183,2.03,imaging,Left transverse temporal gray matter volume (cc),
+MRIValue,LTRTEMM,0.375~2.640,continuous (float),0.3746,2.64,imaging,Left transverse temporal mean cortical thickness (mm),
+MRIValue,RCAC,0.562~4.334,continuous (float),0.5625,4.334,imaging,Right caudal anterior cingulate gray matter volume (cc),
+MRIValue,RCACM,0.580~4.380,continuous (float),0.58,4.38,imaging,Right caudal anterior cingulate mean cortical thickness (mm),
+MRIValue,RCMF,2.154~12.460,continuous (float),2.154,12.46,imaging,Right caudal middle frontal gray matter volume (cc),
+MRIValue,RCMFM,0.456~4.854,continuous (float),0.4557,4.8542,imaging,Right caudal middle frontal mean cortical thickness (mm),
+MRIValue,RCUN,1.473~7.640,continuous (float),1.4727,7.64,imaging,Right cuneus gray matter volume (cc),
+MRIValue,RCUNM,0.499~2.643,continuous (float),0.4991,2.6427,imaging,Right cuneus mean cortical thickness (mm),
+MRIValue,RENT,1.354~6.462,continuous (float),1.3542,6.4622,imaging,Right entorhinal gray matter volume (cc),
+MRIValue,RENTM,0.429~6.410,continuous (float),0.4288,6.4097,imaging,Right entorhinal mean cortical thickness (mm),
+MRIValue,RFUS,3.676~13.310,continuous (float),3.6756,13.31,imaging,Right fusiform gray matter volume (cc),
+MRIValue,RFUSM,0.980~6.784,continuous (float),0.98,6.784,imaging,Right fusiform mean cortical thickness (mm),
+MRIValue,RINFPAR,3.836~20.393,continuous (float),3.8356,20.393,imaging,Right inferior parietal gray matter volume (cc),
+MRIValue,RINFPARM,0.590~4.397,continuous (float),0.5904,4.3966,imaging,Right inferior parietal mean cortical thickness (mm),
+MRIValue,RINFTEMP,5.440~18.120,continuous (float),5.44,18.12,imaging,Right inferior temporal gray matter volume (cc),
+MRIValue,RINFTEMM,0.970~5.170,continuous (float),0.97,5.17,imaging,Right inferior temporal mean cortical thickness (mm),
+MRIValue,RINSULA,2.564~10.400,continuous (float),2.564,10.4,imaging,Right insula gray matter volume (cc),
+MRIValue,RINSULAM,1.240~5.410,continuous (float),1.24,5.41,imaging,Right insula mean cortical thickness (mm),
+MRIValue,RISTHC,0.944~5.030,continuous (float),0.9438,5.03,imaging,Right isthmus cingulate gray matter volume (cc),
+MRIValue,RISTHCM,0.699~3.800,continuous (float),0.6992,3.8,imaging,Right isthmus cingulate mean cortical thickness (mm),
+MRIValue,RLATOCC,4.126~19.361,continuous (float),4.1259,19.361,imaging,Right lateral occipital gray matter volume (cc),
+MRIValue,RLATOCCM,0.677~4.316,continuous (float),0.6773,4.3162,imaging,Right lateral occipital mean cortical thickness (mm),
+MRIValue,RLATORBF,2.366~12.940,continuous (float),2.3657,12.94,imaging,Right lateral orbitofrontal gray matter volume (cc),
+MRIValue,RLATORBM,1.000~4.971,continuous (float),1.0,4.971,imaging,Right lateral orbitofrontal mean cortical thickness (mm),
+MRIValue,RLING,3.674~13.810,continuous (float),3.6735,13.81,imaging,Right lingual gray matter volume (cc),
+MRIValue,RLINGM,0.606~4.788,continuous (float),0.6064,4.7877,imaging,Right lingual mean cortical thickness (mm),
+MRIValue,RMEDORBF,1.988~8.250,continuous (float),1.9881,8.25,imaging,Right medial orbitofrontal gray matter volume (cc),
+MRIValue,RMEDORBM,0.676~4.960,continuous (float),0.6756,4.96,imaging,Right medial orbitofrontal mean cortical thickness (mm),
+MRIValue,RMIDTEMP,4.897~19.280,continuous (float),4.8969,19.28,imaging,Right middle temporal gray matter volume (cc),
+MRIValue,RMIDTEMM,0.860~4.665,continuous (float),0.86,4.6651,imaging,Right middle temporal mean cortical thickness (mm),
+MRIValue,RPARCEN,1.410~7.630,continuous (float),1.41,7.63,imaging,Right paracentral gray matter volume (cc),
+MRIValue,RPARCENM,0.379~3.543,continuous (float),0.3789,3.5426,imaging,Right paracentral mean cortical thickness (mm),
+MRIValue,RPARHIP,1.259~6.170,continuous (float),1.2593,6.17,imaging,Right parahippocampal gray matter volume (cc),
+MRIValue,RPARHIPM,0.805~3.760,continuous (float),0.805,3.7595,imaging,Right parahippocampal mean cortical thickness (mm),
+MRIValue,RPARSOP,2.000~10.273,continuous (float),1.9999,10.273,imaging,Right pars opercularis gray matter volume (cc),
+MRIValue,RPARSOPM,0.561~4.427,continuous (float),0.5607,4.4268,imaging,Right pars opercularis mean cortical thickness (mm),
+MRIValue,RPARORB,0.737~4.030,continuous (float),0.7365,4.03,imaging,Right pars orbitalis gray matter volume (cc),
+MRIValue,RPARORBM,0.732~8.197,continuous (float),0.7323,8.1965,imaging,Right pars orbitalis mean cortical thickness (mm),
+MRIValue,RPARTRI,1.754~8.653,continuous (float),1.7538,8.6527,imaging,Right pars triangularis gray matter volume (cc),
+MRIValue,RPARTRIM,0.710~8.249,continuous (float),0.7099,8.2488,imaging,Right pars triangularis mean cortical thickness (mm),
+MRIValue,RPERCAL,0.687~5.018,continuous (float),0.687,5.018,imaging,Right pericalcarine gray matter volume (cc),
+MRIValue,RPERCALM,0.315~4.331,continuous (float),0.3154,4.3308,imaging,Right pericalcarine mean cortical thickness (mm),
+MRIValue,RPOSCEN,4.560~15.620,continuous (float),4.56,15.62,imaging,Right postcentral gray matter volume (cc),
+MRIValue,RPOSCENM,0.591~3.037,continuous (float),0.5908,3.0367,imaging,Right postcentral mean cortical thickness (mm),
+MRIValue,RPOSCIN,2.040~6.887,continuous (float),2.04,6.8866,imaging,Right posterior cingulate gray matter volume (cc),
+MRIValue,RPOSCINM,0.536~4.330,continuous (float),0.5364,4.33,imaging,Right posterior cingulate mean cortical thickness (mm),
+MRIValue,RPRECEN,5.162~18.910,continuous (float),5.162,18.91,imaging,Right precentral gray matter volume (cc),
+MRIValue,RPRECENM,0.525~3.500,continuous (float),0.5254,3.5,imaging,Right precentral mean cortical thickness (mm),
+MRIValue,RPRECUN,3.122~16.010,continuous (float),3.1222,16.01,imaging,Right precuneus gray matter volume (cc),
+MRIValue,RPRECUNM,0.569~3.348,continuous (float),0.569,3.3479,imaging,Right precuneus mean cortical thickness (mm),
+MRIValue,RROSANC,0.960~4.971,continuous (float),0.96,4.9714,imaging,Right rostral anterior cingulate gray matter volume (cc),
+MRIValue,RROSANCM,0.697~4.991,continuous (float),0.6966,4.9912,imaging,Right rostral anterior cingulate mean cortical thickness (mm),
+MRIValue,RROSMF,5.100~19.844,continuous (float),5.0997,19.844,imaging,Right rostral middle frontal gray matter volume (cc),
+MRIValue,RROSMFM,0.650~4.686,continuous (float),0.65,4.6861,imaging,Right rostral middle frontal mean cortical thickness (mm),
+MRIValue,RSUPFR,12.063~41.050,continuous (float),12.0635,41.05,imaging,Right superior frontal gray matter volume (cc),
+MRIValue,RSUPFRM,0.845~4.060,continuous (float),0.8452,4.06,imaging,Right superior frontal mean cortical thickness (mm),
+MRIValue,RSUPPAR,4.890~17.318,continuous (float),4.89,17.318,imaging,Right superior parietal gray matter volume (cc),
+MRIValue,RSUPPARM,0.458~3.200,continuous (float),0.4575,3.1996,imaging,Right superior parietal mean cortical thickness (mm),
+MRIValue,RSUPTEM,7.119~21.550,continuous (float),7.1194,21.55,imaging,Right superior temporal gray matter volume (cc),
+MRIValue,RSUPTEMM,0.770~3.955,continuous (float),0.77,3.9546,imaging,Right superior temporal mean cortical thickness (mm),
+MRIValue,RSUPMAR,3.122~15.340,continuous (float),3.1219,15.34,imaging,Right supramarginal gray matter volume (cc),
+MRIValue,RSUPMARM,0.719~3.220,continuous (float),0.7192,3.22,imaging,Right supramarginal mean cortical thickness (mm),
+MRIValue,RTRTEM,0.272~2.070,continuous (float),0.2715,2.07,imaging,Right transverse temporal gray matter volume (cc),
+MRIValue,RTRTEMM,0.381~3.069,continuous (float),0.381,3.0689,imaging,Right transverse temporal mean cortical thickness (mm),
+Psychia,DELSEV,"[0, 1, 2, 3]",category (int),0.0,3.0,b5,Delusions severity," 1 = Mild (noticeable, but not a significant change)
+2 = Moderate (significant, but not a dramatic change)
+3 = Severe (very marked or prominent; a dramatic change)
+8 = Not applicable, no delusions reported
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Psychia,HALLSEV,"[0, 1, 2, 3]",category (int),0.0,3.0,b5,Hallucinations severity," 1 = Mild (noticeable, but not a significant 
+	change)
+2 = Moderate (significant, but not a dramatic change)
+3 = Severe (very marked or prominent; a dramatic change)
+8 = Not applicable, no hallucinations reported
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Psychia,AGITSEV,"[0, 1, 2, 3]",category (int),0.0,3.0,b5,Agitation or aggression severity," 1 = Mild (noticeable, but not a significant 
+	change)
+2 = Moderate (significant, but not a dramatic change)
+3 = Severe (very marked or prominent; a dramatic change)
+8 = Not applicable, no agitation or aggression reported
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Psychia,DEPDSEV,"[0, 1, 2, 3]",category (int),0.0,3.0,b5,Depression or dysphoria severity," 1 = Mild (noticeable, but not a significant change)
+2 = Moderate (significant, but not a dramatic change)
+3 = Severe (very marked or prominent; a dramatic change)
+8 = Not applicable, no depression or dysphoria reported
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Psychia,ANXSEV,"[0, 1, 2, 3]",category (int),0.0,3.0,b5,Anxiety severity," 1 = Mild (noticeable, but not a significant change)
+2 = Moderate (significant, but not a dramatic change)
+3 = Severe (very marked or prominent; a dramatic change)
+8 = Not applicable, no anxiety reported
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Psychia,ELATSEV,"[0, 1, 2, 3]",category (int),0.0,3.0,b5,Elation or euphoria severity," 1 = Mild (noticeable, but not a significant change)
+2 = Moderate (significant, but not a dramatic change)
+3 = Severe (very marked or prominent; a dramatic change)
+8 = Not applicable, no elation or euphoria reported
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Psychia,APASEV,"[0, 1, 2, 3]",category (int),0.0,3.0,b5,Apathy or indifference severity," 1 = Mild (noticeable, but not a significant change)
+2 = Moderate (significant, but not a dramatic change)
+3 = Severe (very marked or prominent; a dramatic change)
+8 = Not applicable, no apathy or indifference reported
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Psychia,DISNSEV,"[0, 1, 2, 3]",category (int),0.0,3.0,b5,Disinhibition severity," 1 = Mild (noticeable, but not a significant change)
+2 = Moderate (significant, but not a dramatic change)
+3 = Severe (very marked or prominent; a dramatic change)
+8 = Not applicable, no disinhibition reported
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Psychia,IRRSEV,"[0, 1, 2, 3]",category (int),0.0,3.0,b5,Irritability or lability severity," 1 = Mild (noticeable, but not a significant change)
+2 = Moderate (significant, but not a dramatic change)
+3 = Severe (very marked or prominent; a dramatic change)
+8 = Not applicable, no irritability or lability reported
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Psychia,MOTSEV,"[0, 1, 2, 3]",category (int),0.0,3.0,b5,Motor disturbance severity," 1 = Mild (noticeable, but not a significant change)
+2 = Moderate (significant, but not a dramatic change)
+3 = Severe (very marked or prominent; a dramatic change)
+8 = Not applicable, no motor disturbance reported
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Psychia,NITESEV,"[0, 1, 2, 3]",category (int),0.0,3.0,b5,Nighttime behaviors severity," 1 = Mild (noticeable, but not a significant change)
+2 = Moderate (significant, but not a dramatic change)
+3 = Severe (very marked or prominent; a dramatic change)
+8 = Not applicable, no nighttime behaviors reported
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Psychia,APPSEV,"[0, 1, 2, 3]",category (int),0.0,3.0,b5,Appetite and eating severity," 1 = Mild (noticeable, but not a significant 
+	change)
+2 = Moderate (significant, but not a dramatic change)
+3 = Severe (very marked or prominent; a dramatic change)
+8 = Not applicable, no appetite or eating problems reported
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Psycho,NACCGDS,0~14,continuous (int),0.0,14.0,b6,Total GDS Score," 0 - 15
+88 = Could not be calculated
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Psycho,ANIMALS,0~45,continuous (int),0.0,45.0,c1c2c2t,"Animals - Total number of animals named 
+in 60 seconds"," 0-77	 
+95 = Physical problem
+96 = Cognitive/behavior problem
+97 = Other problem
+98 = Verbal refusal
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Psycho,TRAILA,10~150,continuous (int),10.0,150.0,c1c2,"Trail Making Test Part A - Total number 
+of seconds to complete"," 0 - 150	 
+995 = Physical problem
+996 = Cognitive/behavior problem
+997 = Other problem
+998 = Verbal refusal
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Psycho,TRAILB,19~300,continuous (int),19.0,300.0,c1c2,"Trail Making Test Part B - Total 
+number of seconds to complete"," 0-300	 
+995 = Physical problem
+996 = Cognitive/behavior problem
+997 = Other problem
+998 = Verbal refusal
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Psycho,NACCMMSE,0~30,continuous (int),0.0,30.0,c1,Total MMSE score (using D-L-R-O-W)," 0 - 30
+88 = Score not calculated; missing at least one MMSE item
+95 = Physical problem
+96 = Cognitive/behavior problem
+97 = Other problem
+98 = Verbal refusal
+-4 = Not available: UDS form submitted
+did not collect data in this way, or a
+skip pattern precludes response to this
+question"
+Psycho,LOGIMEM,0~25,continuous (int),0.0,25.0,c1,Total number of story units recalled from this current test administration," 0 - 25
+95 = Physical problem
+96 = Cognitive/behavior problem
+97 = Other problem
+98 = Verbal refusal
+-4 = Not available: UDS form submitted
+did not collect data in this way, or a
+skip pattern precludes response to this
+question"
+Psycho,MEMUNITS,0~25,continuous (int),0.0,25.0,c1,Logical Memory IIA - Delayed - Total number of story units recalled," 0 - 25
+95 = Physical problem
+96 = Cognitive/behavior problem
+97 = Other problem
+98 = Verbal refusal
+-4 = Not available: UDS form submitted
+did not collect data in this way, or a
+skip pattern precludes response to this
+question"
+Psycho,DIGIF,0~12,continuous (int),0.0,12.0,c1,Digit span forward trials correct," 0 - 12
+95 = Physical problem
+96 = Cognitive/behavior problem
+97 = Other problem
+98 = Verbal refusal
+-4 = Not available: UDS form submitted
+did not collect data in this way, or a
+skip pattern precludes response to this
+question"
+Psycho,DIGIFLEN,0~8,continuous (int),0.0,8.0,c1,Digit span forward length," 0-8
+95 = Physical problem
+96 = Cognitive/behavior problem
+97 = Other problem
+98 = Verbal refusal
+-4 = Not available: UDS form submitted
+did not collect data in this way, or a
+skip pattern precludes response to this
+question"
+Psycho,DIGIB,0~12,continuous (int),0.0,12.0,c1,Digit span backward trials correct," 0 - 12
+95 = Physical problem
+96 = Cognitive/behavior problem
+97 = Other problem
+98 = Verbal refusal
+-4 = Not available: UDS form submitted
+did not collect data in this way, or a
+skip pattern precludes response to this
+question"
+Psycho,DIGIBLEN,0~7,continuous (int),0.0,7.0,c1,Digit span backward length," 0-8
+95 = Physical problem
+96 = Cognitive/behavior problem
+97 = Other problem
+98 = Verbal refusal
+-4 = Not available: UDS form submitted
+did not collect data in this way, or a
+skip pattern precludes response to this
+question"
+Psycho,BOSTON,0~30,continuous (int),0.0,30.0,c1,Boston Naming Test (30) - Total score," 0 - 30
+95 = Physical problem
+96 = Cognitive/behavior problem
+97 = Other problem
+98 = Verbal refusal
+-4 = Not available: UDS form submitted
+did not collect data in this way, or a
+skip pattern precludes response to this
+question"
+Demo,SEX,"[1, 2]",category (int),1.0,2.0,a1,Subject's sex," 1 = Male
+2 = Female"
+Demo,HISPANIC,"[0, 1]",category (int),0.0,1.0,a1,Hispanic/Latino ethnicity," 0 = No
+1 = Yes
+9 = Unknown"
+Demo,RACE,"[1, 2, 3, 4, 5]",category (int),1.0,5.0,a1,Race," 1 = White 
+2 = Black or African American
+3 = American Indian or Alaska Native
+4 = Native Hawaiian or Other Pacific Islander
+5 = Asian 
+50 = Other (specify)
+99 = Unknown"
+Demo,PRIMLANG,"[1, 2, 3, 5, 6, 8, 9]",category (int),1.0,9.0,a1,Primary language," 1 = English 
+2 = Spanish 
+3 = Mandarin 
+4 = Cantonese 
+5 = Russian 
+6 = Japanese 
+8 = Other primary language (specify) 
+9 = Unknown"
+Demo,EDUC,0~25,continuous (int),0.0,25.0,a1,Years of education," 0  - 36
+99 = Unknown"
+Demo,MARISTAT,"[1, 2, 3, 4, 5, 6]",category (int),1.0,6.0,a1,Marital status," 1 = Married 
+2 = Widowed 
+3 = Divorced 
+4 = Separated 
+5 = Never married (or marriage was annulled) 
+6 = Living as married/domestic partner
+9 = Other or unknown"
+Demo,HANDED,"[1, 2, 3]",category (int),1.0,3.0,a1,Is the subject left- or right-handed?," 1 = Left-handed 
+2 = Right-handed 
+3 = Ambidextrous 
+9 = Unknown"
+Demo,NACCAGE,21~100,continuous (int),21.0,100.0,a1,Subject's age at visit, 18  - 120
+Demo,NACCAPOE,"[1, 2, 3, 4, 5, 6]",category (int),1.0,6.0,gen,APOE genotype," 1 = e3,e3 
+2 = e3,e4 
+3 = e3,e2 
+4 = e4,e4 
+5 = e4,e2 
+6 = e2,e2 
+9 = Missing/ unknown/ not assessed"
+Demo,NACCNE4S,"[0, 1, 2]",category (int),0.0,2.0,gen,Number of APOE e4 alleles," 0 = No e4 allele 
+1 = 1 copy of e4 allele 
+2 = 2 copies of e4 allele 
+9 = Missing/ unknown/ not assessed"
+Func,BILLS,"[0, 1, 2, 3]",category (int),0.0,3.0,b7,"In the past four weeks, did the subject have any difficulty or need help with: Writing checks, paying bills, or balancing a checkbook"," 0 = Normal
+1 = Has difficulty, but does by self
+2 = Requires assistance
+3 = Dependent
+8 = Not applicable (e.g., never did)
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Func,TAXES,"[0, 1, 2, 3]",category (int),0.0,3.0,b7,"In the past four weeks, did the subject have any difficulty or need help with: Assembling tax records, business affairs, or other papers"," 0 = Normal
+1 = Has difficulty, but does by self
+2 = Requires assistance
+3 = Dependent
+8 = Not applicable (e.g., never did)
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question."
+Func,SHOPPING,"[0, 1, 2, 3]",category (int),0.0,3.0,b7,"In the past four weeks, did the subject have any difficulty or need help with: Shopping alone for clothes, household necessities, or groceries"," 0 = Normal
+1 = Has difficulty, but does by self
+2 = Requires assistance
+3 = Dependent
+8 = Not applicable (e.g., never did)
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Func,GAMES,"[0, 1, 2, 3]",category (int),0.0,3.0,b7,"In the past four weeks, did the subject have any difficulty or need help with: Playing a game of skill such as bridge or chess, working on a hobby"," 0 = Normal
+1 = Has difficulty, but does by self
+2 = Requires assistance
+3 = Dependent
+8 = Not applicable (e.g., never did)
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Func,STOVE,"[0, 1, 2, 3]",category (int),0.0,3.0,b7,"In the past four weeks, did the subject have any difficulty or need help with: Heating water, making a cup of coffee, turning off the stove"," 0 = Normal
+1 = Has difficulty, but does by self
+2 = Requires assistance
+3 = Dependent
+8 = Not applicable (e.g., never did)
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Func,MEALPREP,"[0, 1, 2, 3]",category (int),0.0,3.0,b7,"In the past four weeks, did the subject have any difficulty or need help with: Preparing a balanced meal"," 0 = Normal
+1 = Has difficulty, but does by self
+2 = Requires assistance
+3 = Dependent
+8 = Not applicable (e.g., never did)
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Func,EVENTS,"[0, 1, 2, 3]",category (int),0.0,3.0,b7,"In the past four weeks, did the subject have any difficulty or need help with: Keeping track of current events"," 0 = Normal
+1 = Has difficulty, but does by self
+2 = Requires assistance
+3 = Dependent
+8 = Not applicable (e.g., never did)
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Func,PAYATTN,"[0, 1, 2, 3]",category (int),0.0,3.0,b7,"In the past four weeks, did the subject have any difficulty or need help with: Paying attention to and understanding a TV program, book, or magazine"," 0 = Normal
+1 = Has difficulty, but does by self
+2 = Requires assistance
+3 = Dependent
+8 = Not applicable (e.g., never did)
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Func,REMDATES,"[0, 1, 2, 3]",category (int),0.0,3.0,b7,"In the past four weeks, did the subject have any difficulty or need help with: Remembering appointments, family occasions, holidays, medications"," 0 = Normal
+1 = Has difficulty, but does by self
+2 = Requires assistance
+3 = Dependent
+8 = Not applicable (e.g., never did)
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Func,TRAVEL,"[0, 1, 2, 3]",category (int),0.0,3.0,b7,"In the past four weeks, did the subject have any difficulty or need help with: Traveling out of the neighborhood, driving, or arranging to take public transportation"," 0 = Normal
+1 = Has difficulty, but does by self
+2 = Requires assistance
+3 = Dependent
+8 = Not applicable (e.g., never did)
+9 = Unknown
+-4 = Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+MedH,NACCFAM,"[0, 1]",category (int),0.0,1.0,a3,Indicator of first-degree family member with cognitive impairment," 0 = No report of a first-degree family member with cognitive impairment
+1 = Report of at least one first-degree family member with cognitive impairment
+9 = Unknown
+-4 =  Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes re-sponse to this question"
+MedH,SMOKYRS,0~80,continuous (int),0.0,80.0,a5,Total years smoked cigarettes," 0 - 87
+88 = Not applicable
+99 = Unknown 
+- 4 =  Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+MedH,PACKSPER,"[0, 1, 2, 3, 4, 5]",category (int),0.0,5.0,a5,Average number of packs smoked per day," 0 = No reported cigarette use
+1 = 1 cigarette to less than 1/2 pack 
+2 = 1/2 pack to less than 1 pack 
+3 = 1 pack to 11/2  packs 
+4 = 11/2  packs to 2 packs 
+5 = More than two packs
+8 = Not applicable
+9 = Unknown
+- 4 =  Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+MedH,CVHATT,"[0, 1, 2]",category (int),0.0,2.0,a5,Heart attack/cardiac arrest," 0 = Absent
+1 = Recent/Active
+2 = Remote/Inactive
+9 = Unknown
+- 4 =  Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+MedH,CBSTROKE,"[0, 1, 2]",category (int),0.0,2.0,a5,Stroke," 0 = Absent
+1 = Recent/Active
+2 = Remote/Inactive
+9 = Unknown
+- 4 =  Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+MedH,HYPERTEN,"[0, 1, 2]",category (int),0.0,2.0,a5,Hypertension," 0 = Absent	
+1 = Recent/Active
+2 = Remote/Inactive
+9 = Unknown
+- 4 =  Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+MedH,ALCOHOL,"[0, 1, 2]",category (int),0.0,2.0,a5,"Alcohol abuse - clinically significant impairment occurring over a 12-month period manifested in one of the following areas: work, driving, legal, or social"," 0 = Absent
+1 = Recent/Active
+2 = Remote/Inactive
+9 = Unknown
+- 4 =  Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+MedH,DEPOTHR,"[0, 1]",category (int),0.0,1.0,a5,"Depression episodes more than two 
+years ago"," 0 = No
+1 = Yes
+9 = Unknown
+- 4 =  Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+MedH,PSYCDIS,"[0, 1, 2]",category (int),0.0,2.0,a5,Other psychiatric disorder," 0 = Absent
+1 = Recent/Active
+2 = Remote/Inactive
+9 = Unknown
+- 4 =  Not available: UDS form submitted did not collect data in this way, or a skip pattern precludes response to this question"
+Info,NACCADC,354~9661,continuous (int),354.0,9661.0,header,ADC at which subject was seen, 100 -9999
+Info,MRIFIELD,"[1, 2, 5]",category (int),1.0,5.0,imaging,Magnetic field strength (T)," 1 = 1.5
+2 = 3.0
+5 = Other
+7 = Field strength varies across images
+8 = Not applicable / no MRI available
+9 = Missing / unknown"
+Info,MRIMANU,"[1, 2, 3]",category (int),1.0,3.0,imaging,Manufacturer," 1 = GE
+2 = Siemens
+3 = Phillips
+5 = Other
+8 = Not applicable / no MRI available
+9 = Missing / unknown"
+Info,MRIMODL,1~16,continuous (int),1.0,16.0,imaging,Manufacturer’s model name ," 1 = DISCOVERY MR 750
+2 = GENESIS SIGNA
+3 = SIGNA HDxt
+4 = Trio Tim
+5 = Eclipse 1.5T
+6 = Allegra
+7 = SIGNA EXCITE
+8 = SIGNA
+9 = GEMINI
+10 = Ingenuity
+11 = Sonata
+12 = Skyra
+13 = Signa HDx
+14 = Achieva
+15 = Prisma
+16 = Verio
+88 = Not applicable / no MRI available
+99 = Missing / unknown"
+Info,Label,"['AD', 'MCI', 'NC']",category (str),-999.0,-999.0,,,
+Info,NACCID,225~999854,continuous (int),225.0,999854.0,,,
